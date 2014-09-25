@@ -14,7 +14,11 @@
 <script src="./src/snowshoe.js" class="pre" async></script>
 
 
-<p>Create a handler for the actions.</o>
+<p>Also add an identity, this creates a unique ID of the snowshoe based upon its markings.</p>
+<script src="./src/identity.js" class="pre" async></script>
+
+
+<p>Define a handler</o>
 
 <script class="pre">
 	function logEvents(player){
@@ -24,7 +28,7 @@
 </script>
 
 
-<p>Bind the handler to the <code>snowshoe</code> Array</p>
+<p>... then bind the handler to the <code>snowshoe</code> callback Array</p>
 
 <script class="pre">
 	window.snowshoe = window.snowshoe || [];
