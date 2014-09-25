@@ -1,0 +1,1 @@
+window.addEventListener&&window.addEventListener("touchstart",function(n){var e=n.touches||n.changedTouches;if(5===e.length&&window.snowshoe){n.preventDefault();var o,t=[];for(o=0;o<e.length;o++){var s=e[o];t.push([s.clientX,s.clientY])}var w={points:t};for(o=0;o<window.snowshoe.length;o++)window.snowshoe[o](w)}});

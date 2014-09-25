@@ -1,0 +1,22 @@
+{
+  "name": "snowshoe.js",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MrSwitch/snowshoe.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrSwitch/snowshoe.js/issues"
+  },
+  "homepage": "https://github.com/MrSwitch/snowshoe.js",
+  "devDependencies": {
+    "gulp-uglify": "^1.0.1"
+  }
+}
