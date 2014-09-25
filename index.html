@@ -21,9 +21,9 @@
 <p>Define a handler</o>
 
 <script class="pre">
-	function logEvents(player){
+	function logEvents(resp){
 		var log = document.getElementById('events');
-		log.appendChild(document.createTextNode( Array.prototype.slice.call(arguments).join(', ') + "\n" ) );
+		log.appendChild(document.createTextNode( JSON.stringify(resp,null,2) + "\n" ) );
 	}
 </script>
 
