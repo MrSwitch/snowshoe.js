@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="/adorn/adorn.css" />
+<script src="/adorn/adorn.js"></script>
+
+<h1>SnowShoe</h1>
+
+<blockquote>
+<p>Touch the page with a showshoe (or five fingers) to get some actions</p>
+</blockquote>
+
+<p>Include the script. This sets up the handler on the window object to register the stamp. Recommended to use <code>async</code> option.</p>
+
+<script src="./snowshoe.js" class="pre" async></script>
+
+
+<p>Create a handler for the actions.</o>
+
+<script class="pre">
+	function logEvents(player){
+		var log = document.getElementById('events');
+		log.appendChild(document.createTextNode( Array.prototype.slice.call(arguments).join(', ') + "\n" ) );
+	}
+</script>
+
+
+<p>Bind the handler to the <code>snowshoe</code> Array</p>
+
+<script class="pre">
+	window.snowshoe = window.snowshoe || [];
+	window.snowshoe.push(logEvent);
+</script>
+<pre id="events" placeholder="recorded events"></pre>
