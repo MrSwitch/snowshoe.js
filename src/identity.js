@@ -85,11 +85,11 @@
 		// Find the angle of our disect line
 		var vectorAngle = tangent(disect[0],disect[1]);
 
-		// Score the markers by their distance from the central disect line
+		// Score the markers by their angle from the base line
 		score = [0,0,0];
 		for( i = 0 ; i < markers.length; i++ ){
 			// Find the tangent of each of the markers relative to the main vertex
-			score[i] = 45 + vectorAngle - tangent( vertex, markers[i] );
+			score[i] = 45 + ( Math.round(vectorAngle - tangent( vertex, markers[i] )) % 360 );
 		}
 
 

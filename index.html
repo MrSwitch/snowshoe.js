@@ -23,7 +23,7 @@
 <script class="pre">
 	function logEvents(resp){
 		var log = document.getElementById('events');
-		log.appendChild(document.createTextNode( JSON.stringify(resp,null,2) + "\n" ) );
+		log.appendChild(document.createTextNode( Array.prototype.slice.call(resp.indexes).join(',') + "\n" ) );
 	}
 </script>
 
