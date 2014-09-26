@@ -86,14 +86,23 @@
 		var vectorAngle = tangent(disect[0],disect[1]);
 
 		// Score the markers by their angle from the base line
-		score = [0,0,0];
+		var indexes = [0,0,0];
 		for( i = 0 ; i < markers.length; i++ ){
 			// Find the tangent of each of the markers relative to the main vertex
-			score[i] = 45 + ( Math.round(vectorAngle - tangent( vertex, markers[i] )) % 360 );
+			var index = 45 + ( Math.round(vectorAngle - tangent( vertex, markers[i] )) % 360 );
+
+			// If score is > 180
+			if( index > 180 ){
+				index -= 360;
+			}
+			if( index < -180 ){
+				index += 360;
+			}
+
+			indexes[i] = index;
 		}
 
-
-		return score;
+		return indexes;
 	}
 
 
