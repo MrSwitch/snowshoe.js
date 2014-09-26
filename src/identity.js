@@ -10,23 +10,23 @@
 
 	// Add to the start of the snowshoe array
 	snowshoe.unshift(function(e){
-		e.indexes = getScore(e.points);
+		e.indexes = getIndexes(e.points);
 	});
 
 
 
-	function getScore(points){
+	function getIndexes(points){
 
 		// Find the two points which are furthest from one another (these are the  opposite vertices or 'corners')
 		var i,j,dx,dy,len,
 			disect,
-			max; // Point1, Point2
+			max=0; // Point1, Point2
 
 		for(i=0;i<points.length;i++){
 
 			var point1 = points[i];
 
-			for (j=0;i<points.length;j++){
+			for (j=0;j<points.length;j++){
 
 				var point2 = points[j];
 
@@ -89,17 +89,9 @@
 		score = [0,0,0];
 		for( i = 0 ; i < markers.length; i++ ){
 			// Find the tangent of each of the markers relative to the main vertex
-			score[i] = 45 + vectorAngle - tangent( vectorAngle, markers[i] );
+			score[i] = 45 + vectorAngle - tangent( vertex, markers[i] );
 		}
 
-
-
-		/**
-		 * alternaive
-		// Since there are three remaining points we will have an odd number on either side of this disecting line
-		// Therefore the peak is choosen arbitarily as the point which has the most points to its left
-		 */
-		
 
 		return score;
 	}
@@ -114,7 +106,7 @@
 	function tangent(point1, point2){
 		var dx = point1[0] - point2[0];
 		var dy = point1[1] - point2[1];
-		return Math.atan2(dx,dy);
+		return Math.atan2(dx,dy) * (180/Math.PI);
 	}
 	
 })();
